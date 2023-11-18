@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
+import Sidebar from './components/Sidebar.jsx'
+import Calendar from './pages/Calendar.jsx';
+import Entertainment from './pages/Entertainment.jsx';
+import HomeSettings from './pages/Home Settings.jsx';
+import Settings from './pages/Settings.jsx';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Calendar/>}/>
+        <Route path="/" element={<Entertainment/>}/>
+        <Route path="/" element={<HomeSettings/>}/>
+        <Route path="/" element={<Settings/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
