@@ -3,7 +3,7 @@ import React from "react";
 const Calendar = () => {
   return (
     <div>
-      <h1>calendar page</h1>
+      <h1>Calendar page</h1>
     </div>
   );
 };
