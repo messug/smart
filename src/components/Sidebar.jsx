@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import {
   FaUser,
   FaBars,
-  FaCalenderDays,
-  FaHouseLock,
+  FaAddressBook,
+  FaCalendarAlt,
+  FaHouseUser, 
   FaTv,
-  FaGears,
+  FaCog,
 
 }from "react-icons/fa";
 import {NavLink} from 'react-router-dom';
-import { useState } from 'react/cjs/react.production.min';
+
 
 
 const Sidebar = ({Children}) => {
@@ -21,15 +22,22 @@ const Sidebar = ({Children}) => {
     name:"Home",
     icon:<FaUser/>
   },
+  
+  {
+    path:"/Contacts",
+    name:"Contacts",
+    icon:< FaAddressBook/>
+  },
+
   {
     path:"/calendar",
     name:"Calendar",
-    icon:<FaCalenderDays/>
+    icon:< FaCalendarAlt/>
   },
   {
     path:"/homesettings",
     name:"Homesettings",
-    icon:<FaHouseLock/>
+    icon:<FaHouseUser/>
   },
   {
     path:"/entertainment",
@@ -39,7 +47,7 @@ const Sidebar = ({Children}) => {
   {
     path:"/settings",
     name:"Settings",
-    icon:<FaGears/>
+    icon:<FaCog/>
   },
 
  ]
@@ -48,15 +56,15 @@ return(
     <div className="container">
       <div style={{width:isOpen ? "250px" : "50px" }}className="sidebar">
         <div className="top_section">
-           <h1 style={{display:isOpen ? "block" : "none" }} className="logo">{Logo}</h1>
+           <h1 style={{display:isOpen ? "block" : "none" }} className="logo">{}</h1> 
              <div style={{marginLeft:isOpen ? "50px" : "0" }} className="bars">
-                <FaBars onclick={toggle}/>
+                <FaBars onClick={toggle}/>
              </div>
         </div>
     
       {
         menuItem.map((item, index)=>(
-        <NavLink to={item.path} key={index} className="link" activeclassName="active">
+        <NavLink to={item.path} key={index} className="link" activeClassName="active">
               <div className="icon">{item.icon}</div>
               <div style={{display:isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
         </NavLink>
